@@ -12,7 +12,7 @@ const icon = L.icon({
     popupAnchor: [170, 2]
 })
 
-function addMarker({id, name, lat, lng}) {
+function addMarker({id, name, lat, lgn}) {
 
     //create popup overlay
 const popup = L.popup({
@@ -23,7 +23,7 @@ const popup = L.popup({
 }) .setContent(`${name} <a href="orphanage?id=${id}""> <img src="/images/arrow-white.svg"> </a>`)
 
 // create and add marker
-L.marker([lat, lng],{icon}).addTo(map)
+L.marker([lat, lgn],{icon}).addTo(map)
     .bindPopup(popup)
 
 }
@@ -34,7 +34,7 @@ orphanagesSpan.forEach( span => {
         id: span.dataset.id,
         name: span.dataset.name,
         lat: span.dataset.lat,
-        lng: span.dataset.lng
+        lgn: span.dataset.lgn
     } 
 
     addMarker(orphanage)

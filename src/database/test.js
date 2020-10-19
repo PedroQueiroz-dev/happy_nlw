@@ -3,7 +3,7 @@ const saveOrphanage = require("./saveOrphanage");
 
 Database.then(async (db) => {
   //inserir dados na tabela
-  await saveOrphanage(db, {
+ /* await saveOrphanage(db, {
     lat: "-23.5292991",
     lgn: "-46.7334483",
     name: "Lar dos meninos",
@@ -28,5 +28,5 @@ Database.then(async (db) => {
 
   //deletar dado da tabela
   // console.log (await db.run ("DELETE FROM orphanages WHERE id ='4'"))
-  // console.log (await db.run ("DELETE FROM orphanages WHERE id ='5'"))
+  // console.log (await db.run ("DELETE FROM orphanages WHERE id ='5'")) */
 });

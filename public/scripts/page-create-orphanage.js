@@ -16,10 +16,10 @@ let marker;
 //create and add marker 
 map.on('click', (event) => {
     const lat  = event.latlng.lat;
-    const lng = event.latlng.lng;
+    const lgn = event.latlgn.lgn;
 
     document.querySelector('[name=lat]').value = lat;
-    document.querySelector('[name=lng]').value = lng;
+    document.querySelector('[name=lgn]').value = lgn;
 
 
     //remover icon 
@@ -27,7 +27,7 @@ map.on('click', (event) => {
 
     // add icon layer 
 
-    marker= L.marker ([lat, lng], {icon})
+    marker= L.marker ([lat, lgn], {icon})
     .addTo(map)
 } )
     
@@ -81,7 +81,19 @@ function addPhotosField () {
          //update the input hidden with the selected value 
          const input = document.querySelector('[name="open_on_weekends"]')
 
-         input.value=button.dataset.value
+         input.value=button.dataset.value;
+        } 
 
+         //validating if lat and lng are filled
 
-    }
+         function validate(event) {
+            const inputLat = document.querySelector('#lat');
+            const inputLgn = document.querySelector('#lgn');
+        
+            if (inputLat.value == '' || inputLgn.value == '') {
+                event.preventDefault();
+                alert('Por favor, selecione um local no mapa');
+            }
+        }
+
+    
